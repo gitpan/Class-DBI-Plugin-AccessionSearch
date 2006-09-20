@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Class::DBI::Plugin/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub accession : Plugged {
     my($pkg, $where, $attrs) = @_;
@@ -17,7 +17,7 @@ sub accession : Plugged {
     bless $param , __PACKAGE__;
 }
 
-sub acession_search : Plugged {
+sub accession_search : Plugged {
     my ($self, $where, $attrs) = @_;
 
     $where ||= {};
@@ -41,7 +41,7 @@ Class::DBI::Plugin::AccessionSearch - easliy add search atters.
 
 =head1 VERSION
 
-This documentation refers to Class::DBI::Plugin::AccessionSearch version 0.01
+This documentation refers to Class::DBI::Plugin::AccessionSearch version 0.02
 
 =head1 SYNOPSIS
 
@@ -54,8 +54,8 @@ in your script:
 
     use Your::Data;
     my $d = Your::Data->accession({status => 'ok'});
-    $d->acession_search({sex => 'male'});
-    $d->acession_search({status => 'ng'});
+    $d->accession_search({sex => 'male'});
+    $d->accession_search({status => 'ng'});
 
 =head1 Methods
 
@@ -63,7 +63,7 @@ in your script:
 
 create Class::DBI::AccessionSearch object.
 
-=head2 acession_search
+=head2 accession_search
 
 search_where's wrapper.
 
